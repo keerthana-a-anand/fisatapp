@@ -7,10 +7,11 @@ const ViewAll = () => {
     const fetchData=()=>
         {
             console.log("hello")
-            axios.get("https://anishpdm.github.io/dummy-api-new/student.json").then(
+            axios.get("https://courseapplogix.onrender.com/getdata").then(
                 (response)=>
                 {
-                    setData(response.data)
+                 setData(response.data)
+                    
                 }
             ).catch().finally()
         }
@@ -22,7 +23,6 @@ const ViewAll = () => {
         <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">First name</th>
       <th scope="col">Last name</th>
       <th scope="col">College</th>
@@ -31,7 +31,7 @@ const ViewAll = () => {
       <th scope="col">Mobile</th>
       <th scope="col">Email</th>
       <th scope="col">Address</th>
-      <th scope="col">__v</th>
+     
     </tr>
   </thead>
    {data.map(
@@ -39,7 +39,6 @@ const ViewAll = () => {
         {
             return  <tbody>
             <tr>
-              <td scope="row">{value._id}</td>
               <td>{value.firstname}</td>
               <td>{value.lastname}</td>
               <td>{value.college}</td>
@@ -48,7 +47,7 @@ const ViewAll = () => {
               <td>{value.mobile}</td>
               <td>{value.email}</td>
               <td>{value.address}</td>
-              <td>{value.__v}</td>
+            
             </tr>
           </tbody>
         }
